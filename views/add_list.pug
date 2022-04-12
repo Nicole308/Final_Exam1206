@@ -1,0 +1,15 @@
+extends layout 
+
+block content 
+    div(class="register_container")
+        h1 Create a list 
+
+        form(action="/list/add", method="post") 
+            div(class="container_child")
+                label(for="name") What is the name of the list?
+                input(type="text", id="name", name="name" required) 
+
+                label(for="member") Who is going to be added on the list?
+                input(type="text", id="member", name="member" required)
+
+                button(type="submit") Create

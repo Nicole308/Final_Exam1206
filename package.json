@@ -1,0 +1,26 @@
+{
+  "name": "final_exam",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js",
+    "sass:build": "node-sass public/sass/index.sass public/stylesheets/index.css",
+    "sass:watch": "node-sass -w public/sass/index.sass public/stylesheets/index.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@prisma/client": "^3.12.0",
+    "bcrypt": "^5.0.1",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "express-session": "^1.17.2",
+    "node-sass": "^7.0.1",
+    "nodemon": "^2.0.15",
+    "prisma": "^3.12.0",
+    "pug": "^3.0.2"
+  }
+}

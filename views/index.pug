@@ -1,0 +1,11 @@
+extends layout 
+
+block content 
+    h1 Lists
+
+    a(href="/list/add") 
+        button(type="button") Create a new list
+
+    each list, i in lists 
+        p #{(list.name)}
+        p #{(list.member)}
