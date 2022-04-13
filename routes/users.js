@@ -3,6 +3,7 @@ const router = express.Router();
 const bcrypt = require('bcrypt');
 const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();
+const { isAuth } = require('../authentication');
 
 router.get('/register', async(req, res) => {
     res.render('register.pug');
@@ -40,9 +41,10 @@ router.post('/', async(req, res) => {
     try {
         if (await bcrypt.compare(req.body.password, user.password))
         {
+            req.session.user = user;
             console.log(user);
             //session.user = user
-            res.redirect('/dashboard');
+            res.redirect('/list/add');
             
         } 
         else 
@@ -54,41 +56,25 @@ router.post('/', async(req, res) => {
     }
 });
 
-router.get('/dashboard', async(req, res) => {
+router.get('/dashboard', isAuth, async(req, res) => {
     const lists = await prisma.list.findMany({});
     res.render('index.pug', { lists });
 });
 
-async function checkExist(req, res, next) {
-    const username = await prisma.user.findUnique({
-        where: {
-            userName: req.body.username
-        },
-        select: {
-            userName: true
+// Logout function
+router.get('/logout', (req, res) => {
+    if (req.session) {
+      req.session.destroy(err => {
+        if (err) {
+          res.status(400).send('Unable to log out')
+        } else {
+          //res.send('Logout successful')
+          res.redirect('/')
         }
-    });
-    res.username = username;
-    return next();
-}
-
-// catch 404 and forward to error handler
-router.use(function (req, res, next) {
-	var err = new Error('Not Found');
-	err.status = 404;
-
-	//pass error to the next matching route.
-	next(err);
-});
-
-// handle error, print stacktrace
-router.use(function (err, res) {
-	res.status(err.status || 500);
-
-	res.render('error', {
-		message: err.message,
-		error: err
-	});
-});
+      });
+    } else {
+      res.end()
+    }
+  })
 
 module.exports = router;

@@ -1,11 +1,29 @@
 extends layout 
 
-block content 
-    h1 Lists
+block content
+    div(class="header1_edit")
+        h1 Lists
 
-    a(href="/list/add") 
-        button(type="button") Create a new list
+    div(class="logout_container")
+        a(href="/users/logout")
+            button(type="button" class="logout_btn") Logout         
 
-    each list, i in lists 
-        p #{(list.name)}
-        p #{(list.member)}
+    div(class="elements_container")
+        each list, i in lists
+            div(class="list_container") 
+                p #{(list.name)}
+                div(class="square_container")
+                div(class="button3_container")
+                    a(href="/list/view")
+                        button(type="button" class="button3_edit") View 
+
+        div(class="list_container")
+            p Add new list
+            div(class="square1_container")
+                p +
+            div(class="button3_container")
+            a(href="/list/add") 
+                button(type="button" class="button3_edit") Create
+
+            
+        //- p #{(list.member)}

@@ -3,16 +3,17 @@ const router = express.Router();
 const bcrypt = require('bcrypt');
 const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();
+const { isAuth } = require('../authentication');
 
-router.get('/add', async(req, res) => {
+router.get('/add', isAuth, async(req, res) => {
     res.render('add_list.pug');
 });
 
-router.get('/dashboard', async(req, res) => {
+router.get('/dashboard', isAuth, async(req, res) => {
     res.render('/dashboard');
 });
 
-router.post('/add', async(req, res) => {
+router.post('/add', isAuth, async(req, res) => {
     const name = req.body.name;
     const member = req.body.member;
     try {
@@ -40,6 +41,10 @@ router.post('/add', async(req, res) => {
     } catch (error) {
         res.status(404).send("Error creating list");
     }
+});
+
+router.get('/view', isAuth, async(req, res) => {
+    res.render('view.pug');
 });
 
 module.exports = router;
