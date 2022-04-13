@@ -7,17 +7,17 @@ block content
         form(action="/users/register", method="post") 
             div(class="container_child")
                 label(for="userName") What is your username?
-                input(type="text", id="userName", name="userName" required) 
+                input(type="text", id="userName", name="userName" class="form_input" required) 
 
                 label(for="password") Silently type in your password?
-                input(type="text", id="password", name="password" required)
+                input(type="text", id="password", name="password" class="form_input" required)
 
                 //- label(for="confirmation") Silently type in your password?
                 //- input(type="text", id="confirmation", name="confirmation" required)
+                div(class="button_container")
+                    button(type="submit" class="button1_edit") Sign Up
 
-                button(type="submit") Sign Up
-
-                a(href="/") 
-                    button(type="button") Log in 
+                    a(href="/") 
+                        button(type="button" class="button2_edit") Login 
 
                 

@@ -1,15 +1,20 @@
 extends layout 
 
 block content 
+    div(class="logout_container")
+        a(href="/users/logout")
+            button(type="button" class="logout_btn") Logout         
+
     div(class="register_container")
         h1 Create a list 
 
         form(action="/list/add", method="post") 
             div(class="container_child")
                 label(for="name") What is the name of the list?
-                input(type="text", id="name", name="name" required) 
+                input(type="text", id="name", name="name" class="form_input" required) 
 
                 label(for="member") Who is going to be added on the list?
-                input(type="text", id="member", name="member" required)
-
-                button(type="submit") Create
+                input(type="text", id="member", name="member" class="form_input" required)
+                
+                div(class="button_container")
+                    button(type="submit" class="button1_edit") Create

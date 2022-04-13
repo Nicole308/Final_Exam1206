@@ -1,16 +1,29 @@
 body {
-  background-color: #FEFEFE; }
+  background-image: url("/images/BigBoy.png"), url("/images/CandyCane.png");
+  background-position: 0% 320px, 130% 0;
+  background-repeat: no-repeat, no-repeat; }
 
 header > h1 {
   font-weight: bold;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 20px; }
+  font-size: 40px;
+  text-shadow: 1px 1px 2px; }
 
 .register_container {
+  background-color: #FEFEFE;
+  background-image: url("/images/stamp.png"), url("/images/Stripe.png"), url("/images/Stripe.png");
+  background-position: 95% 5%, 0% 170%, 0% 380%;
+  background-repeat: no-repeat;
+  box-shadow: 0 1px 1px black;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 3em; }
+  margin-left: 22em;
+  margin-right: 22em;
+  margin-top: 5em;
+  margin-bottom: 5em;
+  padding-top: 4em;
+  padding-bottom: 4em; }
 
 .box_container {
   padding-top: 3em;
@@ -38,22 +51,113 @@ header > h1 {
   text-align: center;
   padding-top: 2em; }
 
+.button3_container {
+  text-align: center;
+  padding-top: 1em; }
+
 .button1_edit {
-  border-radius: 2em;
+  border-radius: 0.5em;
   border: 0;
   background-color: #FEFEFE;
   color: #D2314E;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   padding-left: 35px;
   padding-right: 35px;
+  margin-right: 10px;
+  padding-top: 4px;
+  padding-bottom: 4px;
   box-shadow: 2px 2px grey; }
 
 .button2_edit {
-  border-radius: 2em;
+  border-radius: 0.5em;
   border: 0;
   background-color: #1A1C1B;
   color: #FEFEFE;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   padding-left: 35px;
   padding-right: 35px;
+  padding-top: 4px;
+  padding-bottom: 4px;
   box-shadow: 2px 2px grey; }
+
+.button3_edit {
+  border-radius: 4px;
+  border: 0;
+  background-color: #FEFEFE;
+  color: #D2314E;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  padding-left: 40%;
+  padding-right: 40%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  box-shadow: 2px 2px 2px grey; }
+
+.logout_btn {
+  border-radius: 0.5em;
+  border: 0;
+  background-color: #1A1C1B;
+  color: #FEFEFE;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  padding-left: 35px;
+  padding-right: 35px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  margin-left: 85%;
+  box-shadow: 2px 2px grey; }
+
+.logout_container {
+  width: 100%; }
+
+.list_container {
+  background-color: #FFFFFF;
+  background-image: url("/images/stamp.png");
+  background-position: 100% 0%;
+  background-repeat: no-repeat;
+  box-shadow: 0 3px 5px black;
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-top: 5em;
+  margin-bottom: 5em;
+  padding-top: 0.5em;
+  padding-bottom: 2em;
+  padding-left: 1em;
+  padding-right: 1em;
+  width: 15%;
+  height: 50%; }
+
+.list_container > p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 0; }
+
+.square_container {
+  background-color: #EEF1F4;
+  width: 100%;
+  height: 70px; }
+
+.square1_container {
+  width: 60%;
+  margin-left: 20%;
+  height: 70px;
+  border: 2px black;
+  border-style: dashed; }
+
+.square1_container > p {
+  text-align: center;
+  margin-top: 0;
+  padding: 0;
+  margin-bottom: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  color: red;
+  font-size: 65px; }
+
+.elements_container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; }
+
+.header1_edit > h1 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 30px; }
